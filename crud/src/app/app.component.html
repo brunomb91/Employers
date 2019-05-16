@@ -1,0 +1,82 @@
+
+<main class="container">
+  <!--
+  <div class="row">
+    <h2>List of employers: </h2>
+  </div>
+
+
+  <div class="row">
+    <ul>
+      <li *ngFor="let employer of employers">
+        <h2 (click)="employerClicked(employer)">{{employer.name}}</h2>
+      </li>
+    </ul>
+  </div>
+  -->
+
+  <div class="row">
+    <h2>Show employers</h2>
+    <table>
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Address</td>
+          <td>Salary</td>
+          <td>Badge Number</td>
+          <td>Date Joined</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employer of employers">
+          <td>{{employer.name}}</td>
+          <td>{{employer.address}}</td>
+          <td>{{employer.salary}}</td>
+          <td>{{employer.badgeNumber}}</td>
+          <td>{{employer.dateJoined}}</td>
+          <td><button type="button" (click)="employerClicked(employer); postActivated = false">Edit</button></td>
+          <td><button *ngIf="selectedEmployer.id != -1 && !postActivated" (click)="deleteEmployer(); selectedEmployer.id = -1; selectedEmployer.name = ''; selectedEmployer.address = ''; selectedEmployer.salary = 0.0; selectedEmployer.badgeNumber = 0; selectedEmployer.dateJoined = ''; postActivated = true;">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="row">
+    <h2>Edit employer</h2>
+    <table>
+      <tbody>
+        <tr>
+          <td>Name</td>
+          <td><input type="text" [(ngModel)]="selectedEmployer.name" id="name"></td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td><input type="text" [(ngModel)]="selectedEmployer.address" id="address"></td>
+        </tr>
+        <tr>
+          <td>Salary</td>
+          <td><input type="text" [(ngModel)]="selectedEmployer.salary" id="salary"></td>
+        </tr>
+        <tr>
+          <td>Badge Number</td>
+          <td><input type="text" [(ngModel)]="selectedEmployer.badgeNumber" id="badgeNumber"></td>
+        </tr>
+        <tr>
+          <td>Date Joined</td>
+          <td><input type="text" [(ngModel)]="selectedEmployer.dateJoined" id="dateJoined"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="row">
+    <table>
+      <tr>
+        <td><button *ngIf="selectedEmployer.id != -1 && !postActivated" (click)="updateEmployer()">Change</button></td>
+        <td><button *ngIf="selectedEmployer.id == -1 && postActivated" (click)="createEmployer(); selectedEmployer.name = ''; selectedEmployer.address = ''; selectedEmployer.salary = 0.0; selectedEmployer.badgeNumber = 0; selectedEmployer.dateJoined = '';">Save</button></td>
+        <td><button *ngIf="selectedEmployer.id != -1 && !postActivated" (click)="selectedEmployer.id = -1; selectedEmployer.name = ''; selectedEmployer.address = ''; selectedEmployer.salary = 0.0; selectedEmployer.badgeNumber = 0; selectedEmployer.dateJoined = ''; postActivated = true;">New</button></td>
+      </tr>
+    </table>
+  </div>
+
+</main>
