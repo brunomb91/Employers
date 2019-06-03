@@ -3,6 +3,7 @@ from rest_framework import viewsets
 from rest_framework.response import Response
 from .serializers import EmployersSerializer, EmployersMiniSerializer
 from .models import Employers
+from django.shortcuts import render
 
 class EmployersViewSet(viewsets.ModelViewSet):
     """
@@ -15,3 +16,6 @@ class EmployersViewSet(viewsets.ModelViewSet):
         employers = Employers.objects.all()
         serializer = EmployersMiniSerializer(employers, many = True)
         return Response(serializer.data)
+
+def post_detail(request):
+    return render(request, 'api/show.html', {})

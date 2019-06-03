@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ShowService } from '../show.service';
 
 @Component({
   selector: 'app-show-list',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./show-list.component.css']
 })
 export class ShowListComponent implements OnInit {
-
-  constructor() { }
+  dataSource  = [];
+  constructor(private route: ActivatedRoute, ) { }
 
   ngOnInit() {
+
   }
 
-}
+  }

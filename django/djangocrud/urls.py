@@ -25,5 +25,6 @@ router.register(r'employers', views.EmployersViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^', include(router.urls)),
+    # path('', views.post_detail, name='post_detail'),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

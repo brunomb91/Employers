@@ -4,18 +4,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ShowListComponent } from './show/show-list/show-list.component';
+import { ShowService } from './show/show.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ShowListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      { path: '', component: AppComponent },
+      { path: 'show', component: ShowListComponent },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
