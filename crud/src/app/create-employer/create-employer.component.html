@@ -1,4 +1,29 @@
-<p>
-  create-employer works!
-</p>
+<div class="row">
+  <h2>Edit employer</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Name</td>
+        <td><input type="text" [(ngModel)]="selectedEmployer.name" id="name"></td>
+      </tr>
+      <tr>
+        <td>Address</td>
+        <td><input type="text" [(ngModel)]="selectedEmployer.address" id="address"></td>
+      </tr>
+      <tr>
+        <td>Salary</td>
+        <td><input type="text" [(ngModel)]="selectedEmployer.salary" id="salary"></td>
+      </tr>
+      <tr>
+        <td>Badge Number</td>
+        <td><input type="text" [(ngModel)]="selectedEmployer.badgeNumber" id="badgeNumber"></td>
+      </tr>
+      <tr>
+        <td>Date Joined</td>
+        <td><input type="text" [(ngModel)]="selectedEmployer.dateJoined" id="dateJoined"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <a routerLink="/">Back</a>

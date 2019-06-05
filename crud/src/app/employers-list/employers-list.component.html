@@ -1,4 +1,26 @@
-<p>
-  employers-list works!
-</p>
+<div class="row">
+  <h2>Show employers</h2>
+  <table>
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Address</td>
+        <td>Salary</td>
+        <td>Badge Number</td>
+        <td>Date Joined</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employer of employers">
+        <td>{{employer.name}}</td>
+        <td>{{employer.address}}</td>
+        <td>{{employer.salary}}</td>
+        <td>{{employer.badgeNumber}}</td>
+        <td>{{employer.dateJoined}}</td>
+        <td><button type="button" (click)="employerClicked(employer); postActivated = false">Edit</button></td>
+        <td><button *ngIf="selectedEmployer.id != -1 && !postActivated" (click)="deleteEmployer(); selectedEmployer.id = -1; selectedEmployer.name = ''; selectedEmployer.address = ''; selectedEmployer.salary = 0.0; selectedEmployer.badgeNumber = 0; selectedEmployer.dateJoined = ''; postActivated = true;">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 <a routerLink="/">Back</a>
