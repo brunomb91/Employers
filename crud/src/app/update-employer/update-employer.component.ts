@@ -2,16 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { EmployersService } from '../employers.service';
 
 @Component({
-  selector: 'app-create-employer',
-  templateUrl: './create-employer.component.html',
-  styleUrls: ['./create-employer.component.css'],
+  selector: 'app-update-employer',
+  templateUrl: './update-employer.component.html',
+  styleUrls: ['./update-employer.component.css'],
   providers: [EmployersService]
 })
-export class CreateEmployerComponent {
+export class UpdateEmployerComponent{
+
   employers = [{name:'Bruno'},{name:'Bruno2'}];
   selectedEmployer;
-  postActivated = true;
-  divActivated = false;
 
   constructor(private api:EmployersService) {
     this.getEmployers();
@@ -53,7 +52,6 @@ export class CreateEmployerComponent {
       this.api.createEmployer(this.selectedEmployer).subscribe(
         data => {
           this.employers.push(data);
-          alert("Employer signed up succesfully!");
         },
         error => {
           console.log(error);
@@ -61,13 +59,13 @@ export class CreateEmployerComponent {
     }
 
     deleteEmployer = () => {
-        this.api.deleteEmployer(this.selectedEmployer.id).subscribe(
-          data => {
-            this.getEmployers();
-          },
-          error => {
-            console.log(error);
-          })
+      this.api.deleteEmployer(this.selectedEmployer.id).subscribe(
+        data => {
+          this.getEmployers();
+        },
+        error => {
+          console.log(error);
+        })
     }
 
 }

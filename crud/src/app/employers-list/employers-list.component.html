@@ -17,8 +17,8 @@
         <td>{{employer.salary}}</td>
         <td>{{employer.badgeNumber}}</td>
         <td>{{employer.dateJoined}}</td>
-        <td><button type="button" (click)="employerClicked(employer); postActivated = false">Edit</button></td>
-        <td><button *ngIf="selectedEmployer.id != -1 && !postActivated" (click)="deleteEmployer(); selectedEmployer.id = -1; selectedEmployer.name = ''; selectedEmployer.address = ''; selectedEmployer.salary = 0.0; selectedEmployer.badgeNumber = 0; selectedEmployer.dateJoined = ''; postActivated = true;">Delete</button></td>
+        <td><button type="button" routerLink="update" (click)="employerClicked(employer);">Edit</button></td>
+        <td><button type="button" (click)="deleteEmployer(employer);">Delete</button></td>
       </tr>
     </tbody>
   </table>

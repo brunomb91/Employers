@@ -10,9 +10,7 @@ import { EmployersService } from '../employers.service';
 export class EmployersListComponent {
   employers = [{name:'Bruno'},{name:'Bruno2'}];
   selectedEmployer;
-  postActivated = true;
-  divActivated = false;
-
+  
   constructor(private api:EmployersService) {
     this.getEmployers();
     this.selectedEmployer = {id: -1, name: '', address: '', salary: 0.0, badgeNumber: 0, dateJoined: ''};
@@ -29,44 +27,25 @@ export class EmployersListComponent {
     }
 
   employerClicked = (employer) => {
-        console.log(employer.id);
-        this.api.getOneEmployer(employer.id).subscribe(
-          data => {
-            this.selectedEmployer = data;
-          },
-          error => {
-            console.log(error);
-          })
+    console.log(employer.id);
+    this.api.getOneEmployer(employer.id).subscribe(
+      data => {
+        this.selectedEmployer = data;
+      },
+      error => {
+        console.log(error);
+      })
     }
 
-    updateEmployer = () => {
-      this.api.updateEmployer(this.selectedEmployer).subscribe(
+    deleteEmployer = (employer) => {
+      console.log(employer);
+      this.api.deleteEmployer(employer.id).subscribe(
         data => {
           this.getEmployers();
         },
         error => {
           console.log(error);
         })
-      }
-
-    createEmployer = () => {
-      this.api.createEmployer(this.selectedEmployer).subscribe(
-        data => {
-          this.employers.push(data);
-        },
-        error => {
-          console.log(error);
-        })
-    }
-
-    deleteEmployer = () => {
-        this.api.deleteEmployer(this.selectedEmployer.id).subscribe(
-          data => {
-            this.getEmployers();
-          },
-          error => {
-            console.log(error);
-          })
     }
 
 }
