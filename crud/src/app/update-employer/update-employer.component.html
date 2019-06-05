@@ -1,36 +1,31 @@
 <div class="row">
   <app-employers-list></app-employers-list>
   <h2>Update employer</h2>
-  <table>
+  <table *ngFor="let employer of employers">
     <tbody>
       <tr>
         <td>Name</td>
-        <td><input type="text" [(ngModel)]="selectedEmployer.name" id="name"></td>
+        <td><input type="text" [(ngModel)]="employer.name" id="name"></td>
       </tr>
       <tr>
         <td>Address</td>
-        <td><input type="text" [(ngModel)]="selectedEmployer.address" id="address"></td>
+        <td><input type="text" [(ngModel)]="employer.address" id="address"></td>
       </tr>
       <tr>
         <td>Salary</td>
-        <td><input type="text" [(ngModel)]="selectedEmployer.salary" id="salary"></td>
+        <td><input type="text" [(ngModel)]="employer.salary" id="salary"></td>
       </tr>
       <tr>
         <td>Badge Number</td>
-        <td><input type="text" [(ngModel)]="selectedEmployer.badgeNumber" id="badgeNumber"></td>
+        <td><input type="text" [(ngModel)]="employer.badgeNumber" id="badgeNumber"></td>
       </tr>
       <tr>
         <td>Date Joined</td>
-        <td><input type="text" [(ngModel)]="selectedEmployer.dateJoined" id="dateJoined"></td>
-      </tr>
-      <tr>
-        <td>
-          <button *ngIf="selectedEmployer.id == -1 && postActivated" (click)="createEmployer(); selectedEmployer.name = ''; selectedEmployer.address = ''; selectedEmployer.salary = 0.0; selectedEmployer.badgeNumber = 0; selectedEmployer.dateJoined = '';">Save</button>
-        </td>
+        <td><input type="text" [(ngModel)]="employer.dateJoined" id="dateJoined"></td>
       </tr>
       <tr>
           <td>
-            <button (click)="updateEmployer()">Change</button>
+            <button (click)="updateEmployer(employer)">Change</button>
           </td>
       </tr>
     </tbody>

@@ -38,8 +38,8 @@ export class UpdateEmployerComponent{
       })
     }
 
-    updateEmployer = () => {
-      this.api.updateEmployer(this.selectedEmployer).subscribe(
+    updateEmployer = (employer) => {
+      this.api.updateEmployer(employer).subscribe(
         data => {
           this.getEmployers();
         },
