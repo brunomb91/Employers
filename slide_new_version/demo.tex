@@ -1,0 +1,103 @@
+\documentclass[10pt]{beamer}
+
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+
+\title{Employers' system}
+\subtitle{Gerenciamento de funcionários}
+% \date{\today}
+\date{}
+\author{Bruno M. Barbosa}
+\institute{Instituto de Computação}
+% \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Sumário}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Visão geral}
+
+\begin{frame}[fragile]{Descrição}
+
+  O sistema em questão trata-se de um simples sistema voltado para o gerenciamnto de cadastro de funcionários em uma empresa.
+  
+  Feito com o objetivo de exemplificar uma operação de CRUD (Create-Read-Update-Delete) em um sistema Web
+  
+\end{frame}
+
+\begin{frame}[fragile]{Descrição}
+  
+  Dispõe de uma tela inicial de navegação, onde é possível selecionar Cadastro inicial e listagem de todos os funcionários, e mais uma, onde é possível alterar dados existentes.
+  
+\end{frame}
+
+\section{Ferramentas}
+
+\begin{frame}{Ferramentas}
+	
+	\begin{figure}
+	    \centering
+	    \includegraphics[scale=.3]{img/angular-rest.jpg}
+	\end{figure}
+	
+\end{frame}
+
+
+    % \metroset{titleformat frame=smallcaps}
+\section{Atualizações}
+\begin{frame}{Atualizações}
+    
+    \begin{itemize}
+        \item Acréscimo de estilo CSS
+	    \item Utilização do recurso de Routing, do Angular 
+    \end{itemize}
+	
+\end{frame}
+
+
+\section{Trabalhos Futuros}
+\begin{frame}{Trabalhos Futuros}
+    
+        Acréscimo de uma tela de login, onde cada usuário teria um login e senha, e alteraria seus dados individualmente. 
+        Cada um teria permissão de root para alterar tudo, ou normal, para alterar apenas os seus dados.
+    
+\end{frame}
+
+\begin{frame}{Summary}
+
+  Apresentação e código disponíveis em:
+
+  \begin{center}\url{https://github.com/brunomb91/Employers}\end{center}
+
+\end{frame}
+
+\begin{frame}
+  \begin{quote}
+    Veni, Vidi, Vici
+  \end{quote}
+\end{frame}
+
+{\setbeamercolor{palette primary}{fg=black, bg=yellow}
+\begin{frame}[standout]
+  Obrigado!
+\end{frame}
+}
+
+\end{document}
