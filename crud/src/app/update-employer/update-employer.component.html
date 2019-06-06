@@ -1,26 +1,54 @@
+<style>
+  h2 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #4CAF50;
+    font-family: Trebuchet MS;
+  }
+  a:link {
+    text-decoration: none;
+  }
+
+  a:visited {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  a:active {
+    text-decoration: underline;
+  }
+
+  a {
+    font-family: Trebuchet MS; color: blue;
+  }
+</style>
+
 <div class="row">
   <app-employers-list></app-employers-list>
   <h2>Update employer</h2>
   <table *ngFor="let employer of employers">
     <tbody>
       <tr>
-        <td>Name</td>
+        <td style="font-family: Trebuchet MS; color: gray;">Name</td>
         <td><input type="text" [(ngModel)]="employer.name" id="name"></td>
       </tr>
       <tr>
-        <td>Address</td>
+        <td style="font-family: Trebuchet MS; color: gray;">Address</td>
         <td><input type="text" [(ngModel)]="employer.address" id="address"></td>
       </tr>
       <tr>
-        <td>Salary</td>
+        <td style="font-family: Trebuchet MS; color: gray;">Salary</td>
         <td><input type="text" [(ngModel)]="employer.salary" id="salary"></td>
       </tr>
       <tr>
-        <td>Badge Number</td>
+        <td style="font-family: Trebuchet MS; color: gray;">Badge Number</td>
         <td><input type="text" [(ngModel)]="employer.badgeNumber" id="badgeNumber"></td>
       </tr>
       <tr>
-        <td>Date Joined</td>
+        <td style="font-family: Trebuchet MS; color: gray;">Date Joined</td>
         <td><input type="text" [(ngModel)]="employer.dateJoined" id="dateJoined"></td>
       </tr>
       <tr>
@@ -32,4 +60,6 @@
   </table>
 </div>
 
-<a routerLink="/list">Back</a>
+<div class="row">
+  <a routerLink="/list">Back</a>
+</div>
