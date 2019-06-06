@@ -2,16 +2,27 @@
 \usepackage[brazil]{babel}
 \usepackage[utf8]{inputenc}
 
+
+\addtobeamertemplate{navigation symbols}{}{%
+    \usebeamerfont{footline}%
+    \usebeamercolor[fg]{footline}%
+    \hspace{1em}%
+    \insertframenumber/\inserttotalframenumber
+}
+
 \title{Employers' system}
 \author{Bruno Marques Barbosa}
 \begin{document}
 \maketitle
 
-\begin{frame}
-\frametitle{Sumário}
-\tableofcontents
+
+\begin{frame}{Sumário}
+%  \frametitle{Sumário}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[currentsection]
 \end{frame}
 
+\section{Visão Geral}
 \begin{frame}{Visão Geral}
 \frametitle{Visão Geral}
 
@@ -24,6 +35,8 @@
 \end{itemize}
 
 \end{frame}
+
+\section{Ferramentas}
 \begin{frame}{Ferramentas}
 \frametitle{Ferramentas}
 
@@ -33,6 +46,7 @@
 
 \end{frame}
 
+\section{Melhorias}
 \begin{frame}{Melhorias}
 \frametitle{Melhorias}
 \begin{itemize}
@@ -48,7 +62,6 @@
 \begin{center}
 \Huge Execução da aplicação
 \end{center}
-
 
 \end{frame}
 
